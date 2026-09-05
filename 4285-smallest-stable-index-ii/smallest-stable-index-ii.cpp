@@ -2,7 +2,7 @@ class Solution {
 public:
     int firstStableIndex(vector<int>& nums, int k) {
         int n=nums.size();
-        vector<int>suff(100000);
+        vector<int>suff(n+1);
         suff[n-1]=nums.back();
         for(int i=n-2;i>=0;i--){
             suff[i]=min(suff[i+1],nums[i]);
